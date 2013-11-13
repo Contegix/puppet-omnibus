@@ -6,8 +6,8 @@ class PuppetOmnibus < FPM::Cookery::Recipe
   version '3.3.1'
   description 'Puppet Omnibus package'
   revision 0
-  vendor 'fpm'
-  maintainer '<github@tinycat.co.uk>'
+  vendor 'contegix'
+  maintainer 'Contegix Operations <operations@contegix.com>'
   license 'Apache 2.0 License'
 
   source '', :with => :noop
