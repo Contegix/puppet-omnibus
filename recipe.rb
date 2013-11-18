@@ -2,12 +2,12 @@ class PuppetOmnibus < FPM::Cookery::Recipe
   homepage 'https://github.com/andytinycat/puppet-omnibus'
 
   section 'Utilities'
-  name 'contegix-puppet-omnibus'
+  name 'puppet-omnibus'
   version '3.3.1'
   description 'Puppet Omnibus package'
   revision 0
-  vendor 'fpm'
-  maintainer '<github@tinycat.co.uk>'
+  vendor 'contegix'
+  maintainer 'Contegix Operations <operations@contegix.com>'
   license 'Apache 2.0 License'
 
   source '', :with => :noop
@@ -20,14 +20,14 @@ class PuppetOmnibus < FPM::Cookery::Recipe
 
   # Set up paths to initscript and config files per platform
   platforms [:ubuntu, :debian] do
-    config_files '/etc/puppet/puppet.conf',
-                 '/etc/init.d/puppet',
-                 '/etc/default/puppet'
+    config_files '/opt/contegix/etc/puppet/puppet.conf',
+                 '/opt/contegix/etc/init.d/puppet',
+                 '/opt/contegix/etc/default/puppet'
   end
   platforms [:fedora, :redhat, :centos] do
-    config_files '/etc/puppet/puppet.conf',
-                 '/etc/init.d/puppet',
-                 '/etc/sysconfig/puppet'
+    config_files '/opt/contegix/etc/puppet/puppet.conf',
+                 '/opt/contegix/etc/init.d/puppet',
+                 '/opt/contegix/etc/sysconfig/puppet'
   end
   omnibus_additional_paths config_files
 
